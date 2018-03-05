@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[声调]]></title>
+    <url>%2Fnote%2F2018%2F03%2F05%2F%E6%97%A5%E8%AF%AD%2F%E5%A3%B0%E8%B0%83%2F</url>
+    <content type="text"><![CDATA[声调日语的声调是高低型的，由高而低或由低而高。一个假名代表一拍，包括表示清音、浊音、半浊音、促音、拨音以及长音的假名，但是不包括组成拗音中的小“や”、“ゆ”和“よ”，即一个拗音整体上作为一个音拍来看待，如“きゅ”是一个音拍，而不是两拍。而“きゅう”和“くう”等长音则是两拍。 ⓪代表的是，第一拍是低音，从第二拍开始都是高音。 ①代表的是，第一拍是高音，从第二拍开始都是低音。（⓪调和①调正好相反。） ②代表的是，第一拍是低音，第二拍是高音，第三拍开始后面都是低音。 ③代表的是，第一拍是低音，第二拍到第三拍是高音，从第四拍开始都是低音。 ④代表的是，第一拍是低音，第二拍到第四拍是高音，从第五拍开始都是低音。 ⑤⑥⑦⑧依此类推。]]></content>
+      <categories>
+        <category>日语</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[less calc问题]]></title>
     <url>%2Fnote%2F2018%2F01%2F12%2FCSS%2Fless%20calc%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[问题在 less 中使用 css3 的 calc() 函数时，less 会把函数内容当成表达式计算，编译成 css 后会返回计算后的结果。如： 1height: calc(100% - 60px); 会被编译成： 1height: calc(60%); 解决办法1234567height: calc(~"100% - 60px");// orheight: e("calc(100% - 60px)");// 如果有变量height: calc(~"100% - @&#123;var&#125;");height: e("calc(100% - @&#123;var&#125;)");]]></content>
@@ -74,9 +85,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Math对象]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2FMath%E5%AF%B9%E8%B1%A1%2F</url>
-    <content type="text"><![CDATA[Math.min() 和 Math.max() 方法用于确定一组数值中的最小值和最大值，接受任意多个数值参数。 舍入方法： Math.ceil() 执行向上舍入 Math.floor() 执行向下舍入 Math.round() 执行标准舍入 随机数： Math.random() 返回0和1之间的随机数，不包括0和1。 利用以下公式可以从某个整数范围内随机选择一个整数值： 值 = Math.floor(Math.random() - 可能值的总数 + 第一个可能的数值) Math.abs(num) 返回 num 的绝对值。 Math.pow(num, power) 返回 num 的 power 次幂。 Math.sqrt(num) 返回 num 的平方根。]]></content>
+    <title><![CDATA[回到顶部（document.documentElement.scrollTop）]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%EF%BC%88document.documentElement.scrollTop%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[要获取当前页面的滚动条纵坐标位置，用：1document.documentElement.scrollTop 而不是：1document.body.scrollTop documentElement 对应的是 &lt;html&gt; 标签，而 body 对应的是 &lt;body&gt; 标签。在标准w3c下，document.body.scrollTop恒为0，需要用document.documentElement.scrollTop来代替。可以对 document.documentElement.scrollTop 赋值实现页面滚动（回到顶部）。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -85,9 +96,42 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[闭包]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E9%97%AD%E5%8C%85%2F</url>
-    <content type="text"><![CDATA[可以引用在当前函数以外定义的变量。 即使外部函数已经返回，当前函数仍然可以引用在外部函数定义的变量。 闭包可以更新外部变量的值。 参考：《Effective Javacript》第11条：熟练掌握闭包]]></content>
+    <title><![CDATA[DOM文本节点内容属性]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2FDOM%E6%96%87%E6%9C%AC%E8%8A%82%E7%82%B9%E5%86%85%E5%AE%B9%E5%B1%9E%E6%80%A7%2F</url>
+    <content type="text"><![CDATA[DOM 文本节点 Text.nodeValue 属性返回或设置当前节点的值。 CharacterData.data 属性表示该对象中包含的文本数据。 Node.textContent 属性表示一个节点及其后代的文本内容。 Text.wholeText 属性表示一个节点及其后代的文本内容（只读）。 CharacterData 继承于 Node。Node.nodeValue 和 CharacterData.data 基本相同。Node.textContent 和 Text.wholeText 基本相同。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[排序]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[冒泡排序：比较相邻两个元素，如果第一个元素比第二个元素大，则交换他们两个。 123456789Array.prototype.bubble_sort = function() &#123; var i, j; for (i = 0; i &lt; this.length - 1; i++) for (j = 0; j &lt; this.length - 1 - i; j++) if (this[j] &gt; this[j + 1]) &#123; [this[j], this[j + 1]] = [this[j + 1], this[j]]; &#125; return this;&#125;; 选择排序： 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。 12345678910Array.prototype.selection_sort = function() &#123; let i, j, min; for (i = 0; i &lt; this.length - 1; i++) &#123; min = i; for (j = i + 1; j &lt; this.length; j++) if (this[min] &gt; this[j]) min = j; [this[min], this[i]] = [this[i], this[min]]; &#125;&#125;;]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[清除浮动]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FCSS%2F%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%2F</url>
+    <content type="text"><![CDATA[overflow属性给浮动元素的容器添加overflow属性 1overflow: auto | hidden | overlay | scroll; display: flow-root将浮动元素容器的display属性值设为flow-root（兼容性较差，目前[2017/10/08]只有chrome、firefox、opera支持） 1display: flow-root; 带有clear属性的空元素在浮动元素后使用一个空元素，设置clear属性 1234567&lt;style&gt;.clear&#123;clear: both;&#125;&lt;/style&gt;&lt;!-- 浮动的元素 --&gt;&lt;div class="float"&gt;&lt;/div&gt;&lt;!-- 用于清除浮动的空元素 --&gt;&lt;div class="clear"&gt;&lt;/div&gt; :after伪元素使用:after伪元素给浮动元素容器内部末尾添加一个隐藏块元素，为块元素设置clear属性 12345.container:after &#123; content: ''; display: block; clear: both;&#125; 给浮动元素容器添加浮动1.container &#123;float: left;&#125;]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[事件处理注意]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%B3%A8%E6%84%8F%2F</url>
+    <content type="text"><![CDATA[事件处理函数中的 return ： 当返回的是 true 时，将继续操作。 当返回是 false 时，将中断操作。 当不加return时将不会对 window.event.returnvalue 进行设置，所以会默认地继续执行操作。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -109,14 +153,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[排序]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[冒泡排序：比较相邻两个元素，如果第一个元素比第二个元素大，则交换他们两个。 123456789Array.prototype.bubble_sort = function() &#123; var i, j; for (i = 0; i &lt; this.length - 1; i++) for (j = 0; j &lt; this.length - 1 - i; j++) if (this[j] &gt; this[j + 1]) &#123; [this[j], this[j + 1]] = [this[j + 1], this[j]]; &#125; return this;&#125;; 选择排序： 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。 12345678910Array.prototype.selection_sort = function() &#123; let i, j, min; for (i = 0; i &lt; this.length - 1; i++) &#123; min = i; for (j = i + 1; j &lt; this.length; j++) if (this[min] &gt; this[j]) min = j; [this[min], this[i]] = [this[i], this[min]]; &#125;&#125;;]]></content>
+    <title><![CDATA[第6章 面向对象的程序设计]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2F%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%2FJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%2F%E7%AC%AC6%E7%AB%A0%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[6.1 创建对象创建对象的三个方法 工厂模式12345678910111213141516171819202122232425262728293031323334353637383940414243444546function createObject(name) &#123; let o = new Object(); o.name = name; o.sayName = function() &#123; console.log(this.name); &#125; return o;&#125; let object1 = createObject('lala');let object2 = createObject('lala');``` 2. 构造函数模式```jsfunction _Object(name) &#123; this.name = name; this.sayName = function() &#123; console.log(this.name); &#125;&#125; let object1 = new _Object('lala');let object2 = new _Object('lala');``` 3. 原型模式```js function _Object() &#123;&#125; _Object.prototype.name = 'lala'; _Object.sayName = function() &#123; console.log(this.name);&#125; let object1 = new _Object();``` ## 常见的创建对象的方法（组合使用构造函数模式和原型模式）构造函数模式用于定义实例属性，原型模式用于定义方法和共享的属性。```jsfunction _Object(name) &#123; this.name = name;&#125;_Object.prototype.sayName = function() &#123; console.log(this.name);&#125;let object1 = new _Object('lala');]]></content>
       <categories>
-        <category>JavaScript</category>
+        <category>读书笔记</category>
+        <category>JavaScript高级程序设计</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
@@ -131,55 +177,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[清除浮动]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FCSS%2F%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%2F</url>
-    <content type="text"><![CDATA[overflow属性给浮动元素的容器添加overflow属性 1overflow: auto | hidden | overlay | scroll; display: flow-root将浮动元素容器的display属性值设为flow-root（兼容性较差，目前[2017/10/08]只有chrome、firefox、opera支持） 1display: flow-root; 带有clear属性的空元素在浮动元素后使用一个空元素，设置clear属性 1234567&lt;style&gt;.clear&#123;clear: both;&#125;&lt;/style&gt;&lt;!-- 浮动的元素 --&gt;&lt;div class="float"&gt;&lt;/div&gt;&lt;!-- 用于清除浮动的空元素 --&gt;&lt;div class="clear"&gt;&lt;/div&gt; :after伪元素使用:after伪元素给浮动元素容器内部末尾添加一个隐藏块元素，为块元素设置clear属性 12345.container:after &#123; content: ''; display: block; clear: both;&#125; 给浮动元素容器添加浮动1.container &#123;float: left;&#125;]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[第6章 面向对象的程序设计]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2F%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%2FJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%2F%E7%AC%AC6%E7%AB%A0%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[6.1 创建对象创建对象的三个方法 工厂模式12345678910111213141516171819202122232425262728293031323334353637383940414243444546function createObject(name) &#123; let o = new Object(); o.name = name; o.sayName = function() &#123; console.log(this.name); &#125; return o;&#125; let object1 = createObject('lala');let object2 = createObject('lala');``` 2. 构造函数模式```jsfunction _Object(name) &#123; this.name = name; this.sayName = function() &#123; console.log(this.name); &#125;&#125; let object1 = new _Object('lala');let object2 = new _Object('lala');``` 3. 原型模式```js function _Object() &#123;&#125; _Object.prototype.name = 'lala'; _Object.sayName = function() &#123; console.log(this.name);&#125; let object1 = new _Object();``` ## 常见的创建对象的方法（组合使用构造函数模式和原型模式）构造函数模式用于定义实例属性，原型模式用于定义方法和共享的属性。```jsfunction _Object(name) &#123; this.name = name;&#125;_Object.prototype.sayName = function() &#123; console.log(this.name);&#125;let object1 = new _Object('lala');]]></content>
-      <categories>
-        <category>读书笔记</category>
-        <category>JavaScript高级程序设计</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[回到顶部（document.documentElement.scrollTop）]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8%EF%BC%88document.documentElement.scrollTop%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[要获取当前页面的滚动条纵坐标位置，用：1document.documentElement.scrollTop 而不是：1document.body.scrollTop documentElement 对应的是 &lt;html&gt; 标签，而 body 对应的是 &lt;body&gt; 标签。在标准w3c下，document.body.scrollTop恒为0，需要用document.documentElement.scrollTop来代替。可以对 document.documentElement.scrollTop 赋值实现页面滚动（回到顶部）。]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[事件处理注意]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%B3%A8%E6%84%8F%2F</url>
-    <content type="text"><![CDATA[事件处理函数中的 return ： 当返回的是 true 时，将继续操作。 当返回是 false 时，将中断操作。 当不加return时将不会对 window.event.returnvalue 进行设置，所以会默认地继续执行操作。]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[DOM文本节点内容属性]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2FDOM%E6%96%87%E6%9C%AC%E8%8A%82%E7%82%B9%E5%86%85%E5%AE%B9%E5%B1%9E%E6%80%A7%2F</url>
-    <content type="text"><![CDATA[DOM 文本节点 Text.nodeValue 属性返回或设置当前节点的值。 CharacterData.data 属性表示该对象中包含的文本数据。 Node.textContent 属性表示一个节点及其后代的文本内容。 Text.wholeText 属性表示一个节点及其后代的文本内容（只读）。 CharacterData 继承于 Node。Node.nodeValue 和 CharacterData.data 基本相同。Node.textContent 和 Text.wholeText 基本相同。]]></content>
+    <title><![CDATA[Math对象]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2FMath%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"><![CDATA[Math.min() 和 Math.max() 方法用于确定一组数值中的最小值和最大值，接受任意多个数值参数。 舍入方法： Math.ceil() 执行向上舍入 Math.floor() 执行向下舍入 Math.round() 执行标准舍入 随机数： Math.random() 返回0和1之间的随机数，不包括0和1。 利用以下公式可以从某个整数范围内随机选择一个整数值： 值 = Math.floor(Math.random() - 可能值的总数 + 第一个可能的数值) Math.abs(num) 返回 num 的绝对值。 Math.pow(num, power) 返回 num 的 power 次幂。 Math.sqrt(num) 返回 num 的平方根。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -198,6 +198,17 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[闭包]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E9%97%AD%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[可以引用在当前函数以外定义的变量。 即使外部函数已经返回，当前函数仍然可以引用在外部函数定义的变量。 闭包可以更新外部变量的值。 参考：《Effective Javacript》第11条：熟练掌握闭包]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>

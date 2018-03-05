@@ -107,7 +107,7 @@
     root: '/note/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -329,7 +329,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-12-24T20:51:41+08:00">
+                2017-12-24
+              </time>
             
           </span>
 
@@ -424,8 +436,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/note/2017/11/10/读书笔记/JavaScript语言精粹/第3章 对象/" rel="next" title="第3章 对象">
-                <i class="fa fa-chevron-left"></i> 第3章 对象
+              <a href="/note/2017/11/10/JavaScript/排序/" rel="next" title="排序">
+                <i class="fa fa-chevron-left"></i> 排序
               </a>
             
           </div>
@@ -434,8 +446,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/note/2017/11/10/JavaScript/事件处理注意/" rel="prev" title="事件处理注意">
-                事件处理注意 <i class="fa fa-chevron-right"></i>
+              <a href="/note/2017/11/10/JavaScript/回到顶部（document.documentElement.scrollTop）/" rel="prev" title="回到顶部（document.documentElement.scrollTop）">
+                回到顶部（document.documentElement.scrollTop） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -513,7 +525,7 @@
               
                 <a href="/note/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -524,7 +536,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/note/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -535,7 +547,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/note/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -577,6 +589,13 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -598,15 +617,9 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -623,11 +636,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
