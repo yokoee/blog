@@ -107,9 +107,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[排序]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[冒泡排序：比较相邻两个元素，如果第一个元素比第二个元素大，则交换他们两个。 123456789Array.prototype.bubble_sort = function() &#123; var i, j; for (i = 0; i &lt; this.length - 1; i++) for (j = 0; j &lt; this.length - 1 - i; j++) if (this[j] &gt; this[j + 1]) &#123; [this[j], this[j + 1]] = [this[j + 1], this[j]]; &#125; return this;&#125;; 选择排序： 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。 12345678910Array.prototype.selection_sort = function() &#123; let i, j, min; for (i = 0; i &lt; this.length - 1; i++) &#123; min = i; for (j = i + 1; j &lt; this.length; j++) if (this[min] &gt; this[j]) min = j; [this[min], this[i]] = [this[i], this[min]]; &#125;&#125;;]]></content>
+    <title><![CDATA[闭包]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E9%97%AD%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[可以引用在当前函数以外定义的变量。 即使外部函数已经返回，当前函数仍然可以引用在外部函数定义的变量。 闭包可以更新外部变量的值。 参考：《Effective Javacript》第11条：熟练掌握闭包]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -131,6 +131,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[变量提升（Hoisting）]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%EF%BC%88Hoisting%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[在编译阶段将变量和函数声明放入内存中，但仍然保留在编码中键入的位置。例如：函数和变量可以在声明之前调用：12345678catName("Tigger");function catName(name) &#123; console.log("My cat's name is " + name);&#125;foo = 2;var foo; 但是使用匿名函数赋值创建的函数不存在变量提升：12345catName("Tigger"); // catName is not definedlet catName = function(name) &#123; console.log("My cat's name is " + name);&#125; let 也不存在变量提升。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[第7章 匿名函数]]></title>
     <url>%2Fnote%2F2017%2F11%2F10%2F%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%2FJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%2F%E7%AC%AC7%E7%AB%A0%20%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%2F</url>
     <content type="text"><![CDATA[7.1 递归在匿名函数中调用自身时使用 arguments.callee 代替函数名。]]></content>
@@ -141,50 +152,6 @@
       <tags>
         <tag>JavaScript</tag>
         <tag>note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[清除浮动]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FCSS%2F%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%2F</url>
-    <content type="text"><![CDATA[overflow属性给浮动元素的容器添加overflow属性 1overflow: auto | hidden | overlay | scroll; display: flow-root将浮动元素容器的display属性值设为flow-root（兼容性较差，目前[2017/10/08]只有chrome、firefox、opera支持） 1display: flow-root; 带有clear属性的空元素在浮动元素后使用一个空元素，设置clear属性 1234567&lt;style&gt;.clear&#123;clear: both;&#125;&lt;/style&gt;&lt;!-- 浮动的元素 --&gt;&lt;div class="float"&gt;&lt;/div&gt;&lt;!-- 用于清除浮动的空元素 --&gt;&lt;div class="clear"&gt;&lt;/div&gt; :after伪元素使用:after伪元素给浮动元素容器内部末尾添加一个隐藏块元素，为块元素设置clear属性 12345.container:after &#123; content: ''; display: block; clear: both;&#125; 给浮动元素容器添加浮动1.container &#123;float: left;&#125;]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[事件处理注意]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%B3%A8%E6%84%8F%2F</url>
-    <content type="text"><![CDATA[事件处理函数中的 return ： 当返回的是 true 时，将继续操作。 当返回是 false 时，将中断操作。 当不加return时将不会对 window.event.returnvalue 进行设置，所以会默认地继续执行操作。]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[DOM文本节点内容属性]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2FDOM%E6%96%87%E6%9C%AC%E8%8A%82%E7%82%B9%E5%86%85%E5%AE%B9%E5%B1%9E%E6%80%A7%2F</url>
-    <content type="text"><![CDATA[DOM 文本节点 Text.nodeValue 属性返回或设置当前节点的值。 CharacterData.data 属性表示该对象中包含的文本数据。 Node.textContent 属性表示一个节点及其后代的文本内容。 Text.wholeText 属性表示一个节点及其后代的文本内容（只读）。 CharacterData 继承于 Node。Node.nodeValue 和 CharacterData.data 基本相同。Node.textContent 和 Text.wholeText 基本相同。]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[变量提升（Hoisting）]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%EF%BC%88Hoisting%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[在编译阶段将变量和函数声明放入内存中，但仍然保留在编码中键入的位置。例如：函数和变量可以在声明之前调用：12345678catName("Tigger");function catName(name) &#123; console.log("My cat's name is " + name);&#125;foo = 2;var foo; 但是使用匿名函数赋值创建的函数不存在变量提升：12345catName("Tigger"); // catName is not definedlet catName = function(name) &#123; console.log("My cat's name is " + name);&#125; let 也不存在变量提升。]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -199,9 +166,42 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[闭包]]></title>
-    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E9%97%AD%E5%8C%85%2F</url>
-    <content type="text"><![CDATA[可以引用在当前函数以外定义的变量。 即使外部函数已经返回，当前函数仍然可以引用在外部函数定义的变量。 闭包可以更新外部变量的值。 参考：《Effective Javacript》第11条：熟练掌握闭包]]></content>
+    <title><![CDATA[事件处理注意]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%B3%A8%E6%84%8F%2F</url>
+    <content type="text"><![CDATA[事件处理函数中的 return ： 当返回的是 true 时，将继续操作。 当返回是 false 时，将中断操作。 当不加return时将不会对 window.event.returnvalue 进行设置，所以会默认地继续执行操作。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[排序]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2F%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[冒泡排序：比较相邻两个元素，如果第一个元素比第二个元素大，则交换他们两个。 123456789Array.prototype.bubble_sort = function() &#123; var i, j; for (i = 0; i &lt; this.length - 1; i++) for (j = 0; j &lt; this.length - 1 - i; j++) if (this[j] &gt; this[j + 1]) &#123; [this[j], this[j + 1]] = [this[j + 1], this[j]]; &#125; return this;&#125;; 选择排序： 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。 12345678910Array.prototype.selection_sort = function() &#123; let i, j, min; for (i = 0; i &lt; this.length - 1; i++) &#123; min = i; for (j = i + 1; j &lt; this.length; j++) if (this[min] &gt; this[j]) min = j; [this[min], this[i]] = [this[i], this[min]]; &#125;&#125;;]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[清除浮动]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FCSS%2F%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%2F</url>
+    <content type="text"><![CDATA[overflow属性给浮动元素的容器添加overflow属性 1overflow: auto | hidden | overlay | scroll; display: flow-root将浮动元素容器的display属性值设为flow-root（兼容性较差，目前[2017/10/08]只有chrome、firefox、opera支持） 1display: flow-root; 带有clear属性的空元素在浮动元素后使用一个空元素，设置clear属性 1234567&lt;style&gt;.clear&#123;clear: both;&#125;&lt;/style&gt;&lt;!-- 浮动的元素 --&gt;&lt;div class="float"&gt;&lt;/div&gt;&lt;!-- 用于清除浮动的空元素 --&gt;&lt;div class="clear"&gt;&lt;/div&gt; :after伪元素使用:after伪元素给浮动元素容器内部末尾添加一个隐藏块元素，为块元素设置clear属性 12345.container:after &#123; content: ''; display: block; clear: both;&#125; 给浮动元素容器添加浮动1.container &#123;float: left;&#125;]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DOM文本节点内容属性]]></title>
+    <url>%2Fnote%2F2017%2F11%2F10%2FJavaScript%2FDOM%E6%96%87%E6%9C%AC%E8%8A%82%E7%82%B9%E5%86%85%E5%AE%B9%E5%B1%9E%E6%80%A7%2F</url>
+    <content type="text"><![CDATA[DOM 文本节点 Text.nodeValue 属性返回或设置当前节点的值。 CharacterData.data 属性表示该对象中包含的文本数据。 Node.textContent 属性表示一个节点及其后代的文本内容。 Text.wholeText 属性表示一个节点及其后代的文本内容（只读）。 CharacterData 继承于 Node。Node.nodeValue 和 CharacterData.data 基本相同。Node.textContent 和 Text.wholeText 基本相同。]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
